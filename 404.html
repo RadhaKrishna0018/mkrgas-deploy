@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/mkrgas-deploy/favicon.svg" />
@@ -13,9 +13,24 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <script>
+      // Apply the persisted theme before React mounts to avoid a flash.
+      (function () {
+        try {
+          var v = localStorage.getItem("mkrgas:theme");
+          var dark =
+            v === "dark" ||
+            (v === "system" && window.matchMedia("(prefers-color-scheme: dark)").matches) ||
+            (v == null);
+          if (dark) document.documentElement.classList.add("dark");
+        } catch (e) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
     <title>MKR Gas</title>
-    <script type="module" crossorigin src="/mkrgas-deploy/assets/index-Ckb2O_Gx.js"></script>
-    <link rel="stylesheet" crossorigin href="/mkrgas-deploy/assets/index-Bxswoy-q.css">
+    <script type="module" crossorigin src="/mkrgas-deploy/assets/index-QPl2fIjQ.js"></script>
+    <link rel="stylesheet" crossorigin href="/mkrgas-deploy/assets/index-B-s9S0OV.css">
   </head>
   <body>
     <div id="root"></div>
