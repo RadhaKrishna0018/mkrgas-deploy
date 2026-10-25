@@ -1,7 +1,7 @@
 {
   "name": "MKR Gas",
   "short_name": "MKR Gas",
-  "description": "Operations and accounting for MKR Gas",
+  "description": "Time clock and payroll for MKR Gas",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#0d1117",
